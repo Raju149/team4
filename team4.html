@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infosys</title>
+    <style>
+        #header{
+            background-color: white;
+            height: 100px;
+        }
+        #main{
+            background-color: green;
+            height: 100%;
+            padding-top:200px;
+        }
+        #ques1{
+            background-color: white;
+            margin:5px 8%;
+            padding:4px 5% 20px 20px;
+        }
+        .question{
+            font-weight: bold;
+            padding:1px 20% 10px 2px;
+            border-bottom:1px solid rgb(100,100,100);
+            margin-bottom: 30px;
+        }
+        .info{
+            font-weight: bold;
+            padding:10px 20% 0px 2px;
+            border-top:1px solid rgb(100,100,100);
+            margin-top: 30px;
+        }
+        .warn{
+            margin-top: -10px;
+            color:rgb(100,100,100);
+        }
+        .yes,.no{
+            display: inline-block;
+            border:1px solid black;
+            width: 70px;
+            padding:5px 10px 5px 5px;
+            border-radius: 20px;
+        }
+        .yes input{
+            color:violet;
+            border-radius: 50%;
+        }
+        .ans{
+            margin-top:30px;
+            height: 70px;
+            border-bottom:1px solid rgb(100,100,100);
+            overflow: auto;
+        }
+        ans:focus{
+            border:1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <form>
+    <div id='header'>
+        Hello welcome
+    </div>
+    <div id='main'>
+            <div id='ques1'>
+                <p class='question'>1.Are you serving/engaged as a director,partner,sole proprietor or in any other equivalent position in any company,firm or business entity?</p>
+                <div class='yes' onclick='show()'><input type='checkbox' value='checked'>YES</div>
+                <div class='no'>NO</div>
+                <p class='info'>If Yes,please provide details of the same
+                <p class="warn">Please do not key in any personally identifiable information belonging to you or any other person(s) which is unrealatable to the business purpose of this survey.</p> 
+                </p>
+            <div class='ans' contenteditable="true">*</div>
+            </div>
+    </div>
+</form>
+    <script>
+      function divRoll(){
+        for(let i=0;i<6;i++){
+          const l=document.getElementById('ques1').cloneNode(true);
+          document.getElementById('main').append(l);
+        }
+      }
+      divRoll();
+      
+    </script>
+</body>
+</html>
